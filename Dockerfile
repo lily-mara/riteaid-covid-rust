@@ -7,6 +7,8 @@ ADD src/lib.rs /app/src/lib.rs
 
 RUN cargo build --release --lib
 
+EXPOSE 80
+
 ADD src /app/src/
 
 RUN cargo build --release --bin riteaid-covid-rust
