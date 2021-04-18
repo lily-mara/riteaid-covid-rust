@@ -144,7 +144,7 @@ async fn main() {
         }))
         .with(warp::cors().allow_any_origin());
 
-    warp::serve(routes).run(([127, 0, 0, 1], 80)).await;
+    warp::serve(routes).run(([0, 0, 0, 0], 80)).await;
 }
 
 async fn list_stores(
