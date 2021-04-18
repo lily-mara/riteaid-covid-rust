@@ -141,7 +141,8 @@ async fn main() {
                 otel.kind = %SpanKind::Client,
                 http.client_ip = client_ip.as_ref(),
             )
-        }));
+        }))
+        .with(warp::cors().allow_any_origin());
 
     warp::serve(routes).run(([127, 0, 0, 1], 80)).await;
 }
